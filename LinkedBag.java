@@ -1,71 +1,28 @@
-public class LinkedBag<T>
+import java.util.Arrays;
+public class LinkedBag<T> implements BagInterface<T>
 {
-    private Node firstNode;
+    private Node FirstNode;
     private int numberOfEntries;
-
     public LinkedBag()
     {
         firstNode = null;
         numberOfEntries = 0;
     }
-
-    public boolean add(T newEntry)
-    {
-        Node newNode = new Node(newEntry);
-        newNode.next = firstNode;
-        firstNode = newNode;
-        numberOfEntries++;
-        return true;
-    }
-
-    public T remove()
-    {
-        T result = null;
-        if (firstNode != null)
-        {
-            result = firstNode.getData();
-            firstNode = firstNode.getNextNode();
-            numberOfEntries--;
-        }
-
-        return  result;
-    }
-
+    public BagInterface<T> union(BagInterface<T> Bag2);
+    public BagInterface<T> intersection(BagInterface<T> Bag2);
+    public BagInterface<T> difference(BagInterface<T> Bag2);
     private class Node
     {
         private T data;
         private Node next;
-
         private Node(T dataPortion)
         {
             this(dataPortion, null);
         }
-
-        private Node(T dataPortion, Node nextNode)
+        private Node(T dataPortion,Node nextNode)
         {
             data = dataPortion;
             next = nextNode;
         }
-
-        private T getData()
-        {
-            return data;
-        }
-
-        private void setData(T newData)
-        {
-            data = newData;
-        }
-
-        private Node getNextNode()
-        {
-            return next;
-        }
-
-        private void setNextNode(Node nextNode)
-        {
-            next = nextNode;
-        }
-
     }
 }
