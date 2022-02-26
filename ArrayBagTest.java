@@ -1,24 +1,36 @@
 import java.util.Arrays;
 
-public class ArrayBagTest {  
-      public static void main(String[] args) {
-    BagInterface <T> Bag1= new ResizeableArrayBag<>();  
-    BagInterface <T> Bag2 = new ResizeableArrayBag<>(); 
-Bag1.add("A");
-Bag1.add("B");
-Bag1.add("C");
-Bag2.add("D");
-Bag2.add("E");
-Bag2.add("F");
-Bag2.add("B");
-Bag2.add("C");
-//adding entries/objects to each bag 
+public class ArrayBagTest
+{
+   
+public static void main(String[] args)
+   {
+	
+	   BagInterface<String> bag1 = new ResizeableArrayBag<>();
+	   BagInterface<String> bag2 = new ResizeableArrayBag<>();
+	   
+	   //This adds the letters A, C, E, G, I to the first array.
+	   bag1.add("A");
+	   bag1.add("B");
+	   bag1.add("C");
+	   bag1.add("D");
+	   bag1.add("E");
+	   bag1.add("F");
+	   bag1.add("G");
 
-System.out.println("This is the Union between the bags: " +Arrays.toString(Bag1.union(Bag2).toArray()));
-System.out.println("This is the intersection between the bags: " +Arrays.toString(Bag1.intersection(Bag2).toArray()));
-System.out.println("This is the difference between the bags: " +Arrays.toString(Bag1.difference(Bag2).toArray()));
+	   bag2.add("G");
+	   bag2.add("F");
+	   bag2.add("E");
+	   bag2.add("H");
+	   bag2.add("I");
+	   bag2.add("J");
+	   bag2.add("K");
+	   
+	  
+	   System.out.println("Now comparing both bag1 and bag2 with union, intersection, and difference\n");
+	   System.out.println("This is the Union between the bags: " +Arrays.toString(bag1.union(bag2).toArray()));
+System.out.println("This is the intersection between the bags: " +Arrays.toString(bag1.intersection(bag2).toArray()));
+System.out.println("This is the difference between the bags: " +Arrays.toString(bag1.difference(bag2).toArray()));
 //prints out the union intersection and methd
-    
-    }
-
-}
+   } //end main
+} //end ArrayBagTest
