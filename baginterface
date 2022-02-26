@@ -1,4 +1,5 @@
-public class Main {
+public interface BagInterface<T>
+{
     public int getCurrentSize();
 /* Sees whether this bag is empty.
       True if the bag is empty, or false if not. */
