@@ -1,43 +1,72 @@
-
-
-public interface BagInterface<T> {
-    public int getCurrentSize();
-    /* Sees whether this bag is empty.
-          True if the bag is empty, or false if not. */
-    public boolean isEmpty();
-    /* Adds a new entry to this bag.
-          The object to be added as a new entry.
-         True if the addition is successful, or false if not. */
-    public boolean add(T newEntry);
-    /* Removes one unspecified entry from this bag, if possible.
-                     Either the removed entry, if the removal was successful, or null. */
-    public T remove();
-    /* Removes one occurrence of a given entry from this bag, if possible.
-                 The entry to be removed.
-                  True if the removal was successful, or false if not. */
+public interface BagInterface<T>
+{
+      /**
+       * This method gets the size of the current array.
+       * @return
+       */
+      public int getCurrentSize();
+      /**
+       * This method checks if the array is empty or not.
+       * @return
+       */
+      public boolean isEmpty();
+      /**
+       * This method adds a new entry to the array.
+       * @param newEntry
+       * @return
+       */
+      public boolean add(T newEntry);
+      /**
+       * This method remove a entry from the current array.
+       * @return
+       */
+      public T remove();
+            /**
+             * This checks if the remove entry was successful or not.
+             * @param anEntry
+             * @return
+             */
             public boolean remove(T anEntry);
-    /** Removes all entries from this bag. */
-    public void clear();
-    /* Counts the number of times a given entry appears in this bag.
-          The entry to be counted.
-          The number of times anEntry appears in the bag. */
-    public int getFrequencyOf(T anEntry);
-    /* Tests whether this bag contains a given entry.
-          The entry to find.
-         True if the bag contains anEntry, or false if not. */
-    public boolean contains(T anEntry);
-    /* Retrieves all entries that are in this bag.
-          A newly allocated array of all the entries in the bag. Note: If the bag is empty, the returned array is empty. */
-    public T[] toArray();
-    
-    public BagInterface <T> union(BagInterface <T> Bag2);
-    /* a new collection of the entries that occur in both collections
-    Bag2 will have its contents compared to this bag
-    returns a new bag containing the entries of this bag and Bag2 they might have multiple copies of same entry
-    */
-    public BagInterface <T> intersection(BagInterface <T> Bag2);
-    // new collection of the entries that would be left in one collection after removing the copies of other entries
-    //Bag2 that will have its contents compared to this bag
-    public BagInterface <T> difference(BagInterface <T> Bag2);
-    //this removes the entries that are in both the first bag and in Bag2
+      /**
+       * This method clears the entire array.
+       */
+      public void clear();
+      /**
+       * This method counts the number of times a entry appears in a bag.
+       * @param anEntry
+       * @return
+       */
+      public int getFrequencyOf(T anEntry);
+      /**
+       * This method checks if the bag conatins the given entry.
+       * @param anEntry
+       * @return
+       */
+      public boolean contains(T anEntry);
+      /**
+       * This method retrieves all entries of the bag.
+       * @return
+       */
+      public T[] toArray();
+      /**
+       * This collects and compares both collections.
+       * This returns a bag that contains the entries of bag 1 and bag 2
+       * @param Bag2
+       * @return
+       */
+      public BagInterface <T> union(BagInterface <T> Bag2);
+      /**
+       * This collects and compares both collections.
+       * This returns a bag that contains only the entries that bag 1 and bag 2 share.
+       * @param Bag2
+       * @return
+       */
+      public BagInterface <T> intersection(BagInterface <T> Bag2);
+      /**
+       * This collects and compares both collections.
+       * This returns a bag that contains only the entries that bag 1 and bag 2 don't share.
+       * @param Bag2
+       * @return
+       */
+      public BagInterface <T> difference(BagInterface <T> Bag2);   
 }

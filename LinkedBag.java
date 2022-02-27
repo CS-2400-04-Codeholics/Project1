@@ -1,4 +1,5 @@
 import java.util.Arrays;
+
 public class LinkedBag<T> implements BagInterface<T>
 {
     private Node FirstNode;
