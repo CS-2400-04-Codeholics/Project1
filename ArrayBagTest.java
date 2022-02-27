@@ -33,4 +33,4 @@ System.out.println("This is the intersection between the bags: " +Arrays.toStrin
 System.out.println("This is the difference between the bags: " +Arrays.toString(bag1.difference(bag2).toArray()));
 //prints out the union intersection and methd
    } //end main
-} //end ArrayBagTest
+} //end ResizeableArrayBagTest
