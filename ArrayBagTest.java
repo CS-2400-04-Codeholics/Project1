@@ -31,6 +31,6 @@ public static void main(String[] args)
 	   System.out.println("This is the Union between the bags: " +Arrays.toString(bag1.union(bag2).toArray()));
 System.out.println("This is the intersection between the bags: " +Arrays.toString(bag1.intersection(bag2).toArray()));
 System.out.println("This is the difference between the bags: " +Arrays.toString(bag1.difference(bag2).toArray()));
-//prints out the union intersection and methd
+//prints out the union, intersection, and difference methd
    } //end main
 } //end ResizeableArrayBagTest
