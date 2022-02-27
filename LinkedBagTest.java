@@ -1,7 +1,14 @@
 import java.util.Arrays;
-
+/**
+ * Linked Bag Test
+ * @author Ian Atkinson
+ */
 public class LinkedBagTest
 {
+    /**
+     * Linked Bag Main Method
+     * @param args
+     */
     public static void main(String[] args)
     {
         BagInterface<String> linkedBag1 = new LinkedBag<>();

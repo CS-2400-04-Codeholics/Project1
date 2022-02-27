@@ -1,8 +1,14 @@
 import java.util.Arrays;
-
-public class ResizeableArrayBagTest
+/**
+ * Resizeable Array Bag Test
+ * @author Jonathan Marquez
+ */
+public class ArrayBagTest
 {
-   
+	/**
+	 * Array Bag Main Method
+	 * @param args
+	 */
 public static void main(String[] args)
    {
 	
@@ -31,6 +37,6 @@ public static void main(String[] args)
 	   System.out.println("This is the Union between the bags: " +Arrays.toString(bag1.union(bag2).toArray()));
 System.out.println("This is the intersection between the bags: " +Arrays.toString(bag1.intersection(bag2).toArray()));
 System.out.println("This is the difference between the bags: " +Arrays.toString(bag1.difference(bag2).toArray()));
-//prints out the union, intersection, and difference methd
+//prints out the union, intersection, and difference method
    } //end main
 } //end ResizeableArrayBagTest

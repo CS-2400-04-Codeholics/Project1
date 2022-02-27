@@ -1,7 +1,14 @@
 import java.util.Arrays;
-
+/**
+ * Bag Driver Test
+ * @author Ian Atkinson
+ */
 public class BagDriver
 {
+    /**
+     * Bag Driver Main Method
+     * @param args
+     */
     public static void main(String[] args)
     {
         BagInterface<String> arrayBag1 = new ResizeableArrayBag<>();

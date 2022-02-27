@@ -1,43 +1,81 @@
-
-
+/**
+ * Bag Interface
+ * @author Jonathan Marquez
+ */
 public interface BagInterface<T> {
+      /**
+       * This method gets the current size of the bag
+       * @return
+       */
     public int getCurrentSize();
-    /* Sees whether this bag is empty.
-          True if the bag is empty, or false if not. */
+      /**
+       * This method checks if the bag is emptry.
+       * True if empty and false if not.
+       * @return
+       */
     public boolean isEmpty();
-    /* Adds a new entry to this bag.
-          The object to be added as a new entry.
-         True if the addition is successful, or false if not. */
+      /**
+       * This method adds net entries to the current bag.
+       * True if successful and false if not.
+       * @param newEntry
+       * @return
+       */
     public boolean add(T newEntry);
-    /* Removes one unspecified entry from this bag, if possible.
-                     Either the removed entry, if the removal was successful, or null. */
+      /**
+       * This method removes a unspecfic entry from the current bag.
+       * @return
+       */
     public T remove();
-    /* Removes one occurrence of a given entry from this bag, if possible.
-                 The entry to be removed.
-                  True if the removal was successful, or false if not. */
+            /**
+             * This method removes one occurrence of the given entry from the current bag.
+             * True if successful and false if not.
+             * @param anEntry
+             * @return
+             */
             public boolean remove(T anEntry);
-    /** Removes all entries from this bag. */
+      /**
+       * This method clears the entire array.
+       */
     public void clear();
-    /* Counts the number of times a given entry appears in this bag.
-          The entry to be counted.
-          The number of times anEntry appears in the bag. */
+      /**
+       * This method counts the number of times a given entry appers in the bag.
+       * @param anEntry
+       * @return
+       */
     public int getFrequencyOf(T anEntry);
-    /* Tests whether this bag contains a given entry.
-          The entry to find.
-         True if the bag contains anEntry, or false if not. */
+      /**
+       * This method checks if the entry is in the current bag.
+       * True if it contains the entry and false if not.
+       * @param anEntry
+       * @return
+       */
     public boolean contains(T anEntry);
-    /* Retrieves all entries that are in this bag.
-          A newly allocated array of all the entries in the bag. Note: If the bag is empty, the returned array is empty. */
+      /**
+       * This method retrieves all entries that are in the bag.
+       * Note: If the bag is emptry, it will reutrn empty.
+       * @return
+       */
     public T[] toArray();
-    
+      /**
+       * This is new collection of the entries that occur in both bags.
+       * This collection returns the entries of Bag and Bag2.
+       * Note: They may have multiple copies of the same entry.
+       * @param Bag2
+       * @return
+       */
     public BagInterface <T> union(BagInterface <T> Bag2);
-    /* a new collection of the entries that occur in both collections
-    Bag2 will have its contents compared to this bag
-    returns a new bag containing the entries of this bag and Bag2 they might have multiple copies of same entry
-    */
+      /**
+       * This is new collection of the entries that occur in both bags.
+       * This collection returns only the entries that Bag and Bag2 share.
+       * @param Bag2
+       * @return
+       */
     public BagInterface <T> intersection(BagInterface <T> Bag2);
-    // new collection of the entries that would be left in one collection after removing the copies of other entries
-    //Bag2 that will have its contents compared to this bag
+      /**
+       * This is new collection of the entries that occur in both bags.
+       * This collection returns only the entries that Bag and Bag2 do not share.
+       * @param Bag2
+       * @return
+       */
     public BagInterface <T> difference(BagInterface <T> Bag2);
-    //this removes the entries that are in both the first bag and in Bag2
 }
