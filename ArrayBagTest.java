@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class ArrayBagTest
+public class ResizeableArrayBagTest
 {
    
 public static void main(String[] args)
