@@ -15,7 +15,7 @@ public static void main(String[] args)
 	   BagInterface<String> bag1 = new ResizeableArrayBag<>();
 	   BagInterface<String> bag2 = new ResizeableArrayBag<>();
 	   
-	   //This adds the letters A, C, E, G, I to the first array.
+	   //This adds the letters A,B,C,D,E,F,G to bag1
 	   bag1.add("A");
 	   bag1.add("B");
 	   bag1.add("C");
@@ -23,7 +23,7 @@ public static void main(String[] args)
 	   bag1.add("E");
 	   bag1.add("F");
 	   bag1.add("G");
-
+//adds letters G,F,E,H,I,J,K to bag2
 	   bag2.add("G");
 	   bag2.add("F");
 	   bag2.add("E");
