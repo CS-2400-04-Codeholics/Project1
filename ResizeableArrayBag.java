@@ -1,5 +1,7 @@
 import java.util.Arrays;
-
+/**
+ * Resizeble Array Bag
+ */
 public class ResizeableArrayBag<T> implements BagInterface<T>
 {	
 	private T[] bag;
@@ -9,14 +11,18 @@ public class ResizeableArrayBag<T> implements BagInterface<T>
 	private boolean integrityOK = false;
 	private static final int MAX_CAPACITY = 50;
 	
-	/*Creates an empty bag that starts with the default capacity. */
+	/**
+	 * This method creates an empty bag that starts with the default capacity.
+	 */
 	public ResizeableArrayBag()
 	{
 		this(DEFAULT_CAPACITY);
 	} //end default constructor
 	
-	//Creates an empty bag with the starting capacity.
-	  
+	/**
+	 * This method creates an empty bag that startings with a custom capacity.
+	 * @param capacity
+	 */  
 	public ResizeableArrayBag(int capacity)
 	{
 		if(capacity <= MAX_CAPACITY)
@@ -36,9 +42,11 @@ public class ResizeableArrayBag<T> implements BagInterface<T>
 		
 	} //end constructor
 	
-	/* Adds a new entry to this bag.
+	/**
+	 * This method adds a new entry to this bag.
 	 * @param newEntry  The object to be added as a new entry.
-	 * @return  True if the addition is successful, or false if not. */
+	 * @return  True if the addition is successful, or false if not.
+	 */
 	public boolean add(T newEntry)
 	{
 		checkIntegrity();
@@ -77,23 +85,29 @@ public class ResizeableArrayBag<T> implements BagInterface<T>
 		return numberOfEntries == bag.length;
 	} //end isFull method
 	
-	/* Sees whether this bag is empty.
-	 * @return  True if this bag is empty, or false if not. */
+	/**
+	 * This method sees whether this bag is empty.
+	 * @return  True if this bag is empty, or false if not.
+	 */
 	public boolean isEmpty()
 	{		
 		return numberOfEntries == 0;
 	} //end isEmpty method
 	
-	/* Gets the current number of entries in this bag.
-	 * @return  The integer number of entries currently in this bag. */
+	/**
+	 * This method gets the current number of entries in this bag.
+	 * @return  The integer number of entries currently in this bag.
+	 */
 	public int getCurrentSize()
 	{
 		return numberOfEntries;
 	}
 	
-	/* Counts the number of times a given entry appears in this bag.
+	/**
+	 * This method counts the number of times a given entry appears in this bag.
 	 * @param anEntry  The entry to be counted.
-	 * @return  The number of times anEntry appears in this bag. */
+	 * @return  The number of times anEntry appears in this bag.
+	 */
 	public int getFrequencyOf(T anEntry)
 	{
 		checkIntegrity();
@@ -109,9 +123,11 @@ public class ResizeableArrayBag<T> implements BagInterface<T>
 		return counter;
 	} //end checkIntegrity method
 	
-	/* Removes one occurrence of a given entry from this bag.
+	/**
+	 * This method removes one occurrence of a given entry from this bag.
 	 * @param anEntry  The entry to be removed.
-	 * @return  True if the removal was successful, or false if not. */
+	 * @return  True if the removal was successful, or false if not.
+	 */
 	public boolean remove(T anEntry)
 	{
 		checkIntegrity();
@@ -120,8 +136,10 @@ public class ResizeableArrayBag<T> implements BagInterface<T>
 		return anEntry.equals(result);
 	} //end remove method
 	
-	/* Removes one unspecified entry from this bag, if possible.
-	 * @return  Either the removed entry, if the removal was successful, or null otherwise. */
+	/**
+	 * This method removes one unspecified entry from this bag, if possible.
+	 * @return  Either the removed entry, if the removal was successful, or null otherwise.
+	 */
 	public T remove()
 	{
 		checkIntegrity();
@@ -137,18 +155,21 @@ public class ResizeableArrayBag<T> implements BagInterface<T>
 		}
 	} //end clear method
 	
-	/* Tests whether this bag contains a given entry.
+	/**
+	 * This tests whether this bag contains a given entry.
 	 * @param anEntry  The entry to locate.
-	 * @return  True if this bag contains anEntry, or false otherwise. */
+	 * @return  True if this bag contains anEntry, or false otherwise.
+	 */
 	public boolean contains(T anEntry)
 	{
 		checkIntegrity();
 		return getIndexOf(anEntry) >= 0;
 	} //end contains method
 	
-	/* Combines two arrays into one
-	 * @return	array with all values from previous arrays. */
-	
+	/**
+	 * Combines two arrays into one
+	 * @return	array with all values from previous arrays.
+	 */
 	public BagInterface<T> union(BagInterface<T> otherBag)
 	{
 		BagInterface<T> result = new ResizeableArrayBag<>();
@@ -168,9 +189,10 @@ public class ResizeableArrayBag<T> implements BagInterface<T>
 		return result;
 	} //end union method
 	
-	/* Checks to see which values are the same between two arrays.
-	 * @return	array with similar values form both arrays. */
-	
+	/**
+	 * Checks to see which values are the same between two arrays.
+	 * @return	array with similar values form both arrays.
+	 */
 	public BagInterface<T> intersection(BagInterface<T> otherBag)
 	{
 		BagInterface<T> result = new ResizeableArrayBag<>();
@@ -195,9 +217,10 @@ public class ResizeableArrayBag<T> implements BagInterface<T>
 		return finalResult;
 	} //end intersection method
 	
-	/* Checks to see which values are different between two arrays.
-	 * @return	array with different values form both arrays. */
-	
+	/**
+	 * Checks to see which values are different between two arrays.
+	 * @return	array with different values form both arrays.
+	 */
 	public BagInterface<T> difference(BagInterface<T> otherBag)
 	{
 		BagInterface<T> result = new ResizeableArrayBag<>();
@@ -221,7 +244,7 @@ public class ResizeableArrayBag<T> implements BagInterface<T>
 		return result;
 	} //end difference method
 	
-	// Throws an exception if the client requests a capacity that is too large.
+	//Throws an exception if the client requests a capaity that is too large.
 	private void checkCapacity(int capacity)
 	{
 		if(capacity > MAX_CAPACITY)

@@ -1,27 +1,46 @@
+/**
+ * Linked Bag
+ */
 public class LinkedBag<T> implements BagInterface<T>
 {
     private Node firstNode;
     private int numberOfEntries;
-
+    
+    /**
+     * Creates that linked Bag with one node entry.
+     */
     public LinkedBag()
     {
         firstNode = null;
         numberOfEntries = 0;
     }
-
+    
     @Override
+    /**
+     * This returns the number of entries in the current bag.
+     * @return Number of entries in the bag.
+     */
     public int getCurrentSize()
     {
         return numberOfEntries;
     }
 
     @Override
+    /**
+     * This checks if the bag is empty.
+     * @return True if empty and False if not.
+     */
     public boolean isEmpty()
     {
         return numberOfEntries == 0;
     }
 
     @Override
+    /**
+     * This adds a new entry into the bag.
+     * @param newEntry New Entry of the bag.
+     * @return True if successful, False if not.
+     */
     public boolean add(T newEntry)
     {
         Node newNode = new Node(newEntry);
@@ -32,6 +51,10 @@ public class LinkedBag<T> implements BagInterface<T>
     }
 
     @Override
+    /**
+     * This removes an unspecified entry from the bag.
+     * @return Either removed entry or null.
+     */
     public T remove()
     {
         T result = null;
@@ -45,6 +68,7 @@ public class LinkedBag<T> implements BagInterface<T>
         return result;
     }
 
+    // It retrieves the data of the given entry in the bag.
     private Node getReferenceTo(T anEntry)
     {
         boolean found = false;
@@ -66,6 +90,11 @@ public class LinkedBag<T> implements BagInterface<T>
     }
 
     @Override
+    /**
+     * This method removes an occurrence of the given entry from the bag.
+     * @param anEntry The entry being removed.
+     * @return True if entry was removed, or False if not.
+     */
     public boolean remove(T anEntry)
     {
         boolean result = false;
@@ -92,6 +121,11 @@ public class LinkedBag<T> implements BagInterface<T>
     }
 
     @Override
+    /**
+     * This method gets the number of times the given entry occurred in the bag.
+     * @param anEntry The entry being counted.
+     * @return It returns the number of times the entry has occurred.
+     */
     public int getFrequencyOf(T anEntry)
     {
         int frequency = 0;
@@ -114,6 +148,11 @@ public class LinkedBag<T> implements BagInterface<T>
     }
 
     @Override
+    /**
+     * This method checks if the bag contains a given entry or not.
+     * @param anEntry This is the entry being checked.
+     * @return True if entry was found, or False if not.
+     */
     public boolean contains(T anEntry)
     {
         boolean found = false;
@@ -154,6 +193,10 @@ public class LinkedBag<T> implements BagInterface<T>
     }
 
     @Override
+    /**
+     * This unifies bag1 and bag2
+     * @return This returns a bag with all the data of bag1 and bag2.
+     */
     public BagInterface<T> union(BagInterface<T> Bag2)
     {
         int unionEntries = this.numberOfEntries + Bag2.getCurrentSize();
@@ -177,6 +220,10 @@ public class LinkedBag<T> implements BagInterface<T>
     }
 
     @Override
+    /**
+     * Checks if bag1 and bag2 shares any data.
+     * @return This returns a bag that only contains the shared data of bag1 and bag2.
+     */
     public BagInterface<T> intersection(BagInterface<T> Bag2)
     {
         BagInterface<T> result = new ResizeableArrayBag<>();
@@ -207,6 +254,10 @@ public class LinkedBag<T> implements BagInterface<T>
     }
 
     @Override
+    /**
+     * Checks if bag1 and bag2 contain difference date from each other.
+     * @return This returns a bag that only contains the data that bag1 and bag2 had differently.
+     */
     public BagInterface<T> difference(BagInterface<T> Bag2)
     {
         BagInterface<T> difference = new ResizeableArrayBag<>();
