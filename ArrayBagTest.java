@@ -1,16 +1,12 @@
 import java.util.Arrays;
 import java.util.Scanner;
-
 public class ResizeableArrayBagTest
 {
-   
 public static void main(String[] args)
    {
 	Scanner scan = new Scanner(System.in);
-	
 	   BagInterface<String> bag1 = new ResizeableArrayBag<>();
 	   BagInterface<String> bag2 = new ResizeableArrayBag<>();
-	   
 	   //This adds the letters A, C, E, G, I to the first array.
 	   bag1.add("A");
 	   bag1.add("B");
@@ -119,11 +115,7 @@ public static void main(String[] args)
 		   }
 		
 	   } while (!(prompt.equals("q")));
-	   
 	   System.out.println("Now on the second bag.\n");
-
-	   
-	   
 	   //The user is given a multitude of options for the second bag.
 	   do {
 		   System.out.println("Which one would you like to see?:\np = print bag\na = add to the bag\ne = show if the bag is empty\nf = find word\ns = size of the bag\nr = remove something from the bag\nc = clear bag\nq = move onto camparing the bags");
@@ -214,12 +206,11 @@ public static void main(String[] args)
 		   		break;
 		   }
 		}while (!(prompt.equals("q")));
-		
-	
-	   System.out.println("Now comparing both bag1 and bag2 with union, intersection, and difference\n");
-	   System.out.println("This is the Union between the bags: " +Arrays.toString(bag1.union(bag2).toArray()));
+
+System.out.println("Now comparing both bag1 and bag2 with union, intersection, and difference\n");
+System.out.println("This is the Union between the bags: " +Arrays.toString(bag1.union(bag2).toArray()));
 System.out.println("This is the intersection between the bags: " +Arrays.toString(bag1.intersection(bag2).toArray()));
 System.out.println("This is the difference between the bags: " +Arrays.toString(bag1.difference(bag2).toArray()));
 //prints out the union intersection and methd
 		 } //end main
-} //end ArrayBagTest
+} //end ResizeableArrayBagTest
